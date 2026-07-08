@@ -66,7 +66,7 @@ function Playbox() {
     <>
       <div
         style={{
-          marginBottom: "20px",
+          marginBottom: "10px",
           display: "flex",
           justifyContent: "space-between",
         }}
