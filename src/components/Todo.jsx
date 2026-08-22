@@ -1,11 +1,9 @@
 import React, { useState } from "react";
 export default function Todo() {
-  const [todo, setTodo] = useState([]);
   const [task, setTask] = useState("");
-  // const [filtered, setFiltered] = useState([]);
+  const [todo, setTodo] = useState([]);
 
-  const handleAddTask = () => {
-    if (!task.trim()) return;
+  const handleClick = () => {
     setTodo([
       ...todo,
       {
@@ -14,7 +12,6 @@ export default function Todo() {
         completed: false,
       },
     ]);
-
     setTask("");
   };
 
@@ -29,24 +26,20 @@ export default function Todo() {
       ),
     );
   };
+
   return (
     <div>
-      <h1 className="text-2xl">Todo List</h1>
-      <input
-        className="bg-gray-200 rounded-2xl"
-        type="text"
-        onChange={(e) => setTask(e.target.value)}
-      />
-      <button onClick={handleAddTask}>ADD</button>
+      <h1>Todo List</h1>
+      <input type="text" onChange={(e) => setTask(e.target.value)} />
+      <button onClick={handleClick}>ADD</button>
       {todo.map((item) => (
         <div key={item.id}>
           <span
-            onClick={() => handleStrike(item.id)}
             className={item.completed ? "line-through" : ""}
+            onClick={() => handleStrike(item.id)}
           >
-            {item.name}
+            {item.name} <button onClick={() => handleDelete(item.id)}>X</button>
           </span>
-          <button onClick={() => handleDelete(item.id)}>X</button>
         </div>
       ))}
     </div>
