@@ -33,19 +33,15 @@ export default function Accordian() {
         "JSX is a syntax extension for JavaScript that allows you to write HTML-like code in your JavaScript files.",
     },
   ];
-
   const handleClick = (id) => {
-    setCard(card === id ? null : id);
+    setCard(card === id ? null: id);
   };
-
   return (
     <div>
       {data.map((item) => (
-        <div key={item.id}>
-          <span>
-            <button onClick={() => handleClick(item.id)}>{item.title}</button>
-          </span>
-          {card === item.id && <p>{item.content}</p>}
+        <div onClick={() => handleClick(item.id)}>
+          {item.title}
+          <span>{card === item.id && <p>{item.content}</p>}</span>
         </div>
       ))}
     </div>

@@ -4,6 +4,7 @@ import Todo from "./components/Todo";
 import Tabs from "./components/Tabs";
 import Accordian from "./components/Accordian";
 import Modal from "./components/Modal";
+import StarRating from "./components/StarRating";
 
 export default function App() {
   return (
@@ -11,7 +12,8 @@ export default function App() {
       {/* <Todo /> */}
       {/* <Tabs/> */}
       {/* <Accordian /> */}
-      <Modal />
+      {/* <Modal /> */}
+      <StarRating/>
     </div>
   );
 }
