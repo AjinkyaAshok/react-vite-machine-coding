@@ -7,9 +7,10 @@ import Modal from "./components/Modal";
 import StarRating from "./components/StarRating";
 import ProgressBar from "./components/ProgressBar";
 import Toast from "./components/Toast";
+import Dropdown from "./components/Dropdown";
+import Autocomplete from "./components/Autocomplete";
 
 export default function App() {
- 
   return (
     <div>
       {/* <Todo /> */}
@@ -18,7 +19,9 @@ export default function App() {
       {/* <Modal /> */}
       {/* <StarRating/> */}
       {/* <ProgressBar value={100}/> */}
-      <Toast value={"hello"} type={"error"} />
+      {/* <Toast message={"hello"} type={"error"}  /> */}
+      {/* <Dropdown options={["React","Next","Angular"]} /> */}
+      <Autocomplete options={["React", "Vue", "Angular", "Svelte", "Next.js"]}/>
     </div>
   );
 }
