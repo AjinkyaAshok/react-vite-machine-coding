@@ -9,6 +9,7 @@ import ProgressBar from "./components/ProgressBar";
 import Toast from "./components/Toast";
 import Dropdown from "./components/Dropdown";
 import Autocomplete from "./components/Autocomplete";
+import Pagination from "./components/Pagination";
 
 export default function App() {
   return (
@@ -21,7 +22,8 @@ export default function App() {
       {/* <ProgressBar value={100}/> */}
       {/* <Toast message={"hello"} type={"error"}  /> */}
       {/* <Dropdown options={["React","Next","Angular"]} /> */}
-      <Autocomplete options={["React", "Vue", "Angular", "Svelte", "Next.js"]}/>
+      {/* <Autocomplete options={["React", "Vue", "Angular", "Svelte", "Next.js"]}/> */}
+      <Pagination />
     </div>
   );
 }
