@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./index.css";
 import Todo from "./components/Todo";
 import Tabs from "./components/Tabs";
@@ -10,8 +10,10 @@ import Toast from "./components/Toast";
 import Dropdown from "./components/Dropdown";
 import Autocomplete from "./components/Autocomplete";
 import Pagination from "./components/Pagination";
+import Carousel from "./components/Carousel";
 
 export default function App() {
+
   return (
     <div>
       {/* <Todo /> */}
@@ -23,7 +25,8 @@ export default function App() {
       {/* <Toast message={"hello"} type={"error"}  /> */}
       {/* <Dropdown options={["React","Next","Angular"]} /> */}
       {/* <Autocomplete options={["React", "Vue", "Angular", "Svelte", "Next.js"]}/> */}
-      <Pagination />
+      {/* <Pagination /> */}
+      <Carousel />
     </div>
   );
 }
