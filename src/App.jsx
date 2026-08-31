@@ -12,9 +12,9 @@ import Autocomplete from "./components/Autocomplete";
 import Pagination from "./components/Pagination";
 import Carousel from "./components/Carousel";
 import OTP from "./components/OTP";
+import MultiSelect from "./components/MultiSelect";
 
 export default function App() {
-
   return (
     <div>
       {/* <Todo /> */}
@@ -28,7 +28,8 @@ export default function App() {
       {/* <Autocomplete options={["React", "Vue", "Angular", "Svelte", "Next.js"]}/> */}
       {/* <Pagination /> */}
       {/* <Carousel /> */}
-      <OTP/>
+      {/* <OTP/> */}
+      <MultiSelect />
     </div>
   );
 }
