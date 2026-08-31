@@ -11,6 +11,7 @@ import Dropdown from "./components/Dropdown";
 import Autocomplete from "./components/Autocomplete";
 import Pagination from "./components/Pagination";
 import Carousel from "./components/Carousel";
+import OTP from "./components/OTP";
 
 export default function App() {
 
@@ -26,7 +27,8 @@ export default function App() {
       {/* <Dropdown options={["React","Next","Angular"]} /> */}
       {/* <Autocomplete options={["React", "Vue", "Angular", "Svelte", "Next.js"]}/> */}
       {/* <Pagination /> */}
-      <Carousel />
+      {/* <Carousel /> */}
+      <OTP/>
     </div>
   );
 }
