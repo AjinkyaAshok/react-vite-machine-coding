@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./index.css";
 import Todo from "./components/Todo";
 import Tabs from "./components/Tabs";
@@ -13,6 +13,7 @@ import Pagination from "./components/Pagination";
 import Carousel from "./components/Carousel";
 import OTP from "./components/OTP";
 import MultiSelect from "./components/MultiSelect";
+import FileUpload from "./components/FileUpload";
 
 export default function App() {
   return (
@@ -29,7 +30,8 @@ export default function App() {
       {/* <Pagination /> */}
       {/* <Carousel /> */}
       {/* <OTP/> */}
-      <MultiSelect />
+      {/* <MultiSelect /> */}
+      <FileUpload/>
     </div>
   );
 }
