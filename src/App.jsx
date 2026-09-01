@@ -18,11 +18,11 @@ import FileUpload from "./components/FileUpload";
 export default function App() {
   return (
     <div>
+      {/* <StarRating/> */}
       {/* <Todo /> */}
       {/* <Tabs/> */}
       {/* <Accordian /> */}
-      {/* <Modal /> */}
-      {/* <StarRating/> */}
+      <Modal />
       {/* <ProgressBar value={100}/> */}
       {/* <Toast message={"hello"} type={"error"}  /> */}
       {/* <Dropdown options={["React","Next","Angular"]} /> */}
@@ -31,7 +31,7 @@ export default function App() {
       {/* <Carousel /> */}
       {/* <OTP/> */}
       {/* <MultiSelect /> */}
-      <FileUpload/>
+      {/* <FileUpload/> */}
     </div>
   );
 }

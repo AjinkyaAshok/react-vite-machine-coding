@@ -1,65 +1,25 @@
-// import React, { useState } from "react";
-// export default function Todo() {
-//   const [task, setTask] = useState("");
-//   const [todo, setTodo] = useState([]);
-
-//   const handleClick = () => {
-//     setTodo([
-//       ...todo,
-//       {
-//         id: Date.now(),
-//         name: task,
-//         completed: false,
-//       },
-//     ]);
-//     setTask("");
-//   };
-
-//   const handleDelete = (id) => {
-//     setTodo(todo.filter((item) => item.id !== id));
-//   };
-
-//   const handleStrike = (id) => {
-//     setTodo(
-//       todo.map((item) =>
-//         item.id === id ? { ...item, completed: !item.completed } : item,
-//       ),
-//     );
-//   };
-
-//   return (
-//     <div>
-//       <h1>Todo List</h1>
-//       <input type="text" onChange={(e) => setTask(e.target.value)} />
-//       <button onClick={handleClick}>ADD</button>
-//       {todo.map((item) => (
-//         <div key={item.id}>
-//           <span
-//             className={item.completed ? "line-through" : ""}
-//             onClick={() => handleStrike(item.id)}
-//           >
-//             {item.name} <button onClick={() => handleDelete(item.id)}>X</button>
-//           </span>
-//         </div>
-//       ))}
-//     </div>
-//   );
-// }
-
 import React, { useState } from "react";
 
 export default function Todo() {
   const [task, setTask] = useState("");
   const [todo, setTodo] = useState([]);
 
-  const handleClick = () => {
-    setTodo([...todo, { id: Date.now(), task: task, completed: false }]);
+  const handleTodo = () => {
+    if (!task.trim()) return;
+    setTodo([
+      ...todo,
+      {
+        id: Date.now(),
+        todo: task,
+        completed: false,
+      },
+    ]);
+    setTask("");
   };
 
   const handleDelete = (id) => {
     setTodo(todo.filter((item) => item.id !== id));
   };
-
   const handleStrike = (id) => {
     setTodo(
       todo.map((item) =>
@@ -69,16 +29,25 @@ export default function Todo() {
   };
 
   return (
-    <div>
-      <h1>TODO LIST</h1>
-      <input type="text" onChange={(e) => setTask(e.target.value)} />
-      <button onClick={handleClick}>ADD</button>
+    <div className="mx-auto flex-col  h-screen flex justify-center items-center">
+      Todo
+      <input
+        className="bg-amber-100 rounded-2xl"
+        type="text"
+        onChange={(e) => setTask(e.target.value)}
+      />
+      <button onClick={() => handleTodo()}>ADD</button>
       {todo.map((item) => (
-        <div  key={item.id}>
-          <span onClick={() => handleStrike(item.id)} className={item.completed ? "line-through" : ""}>
-            {item.task}
+        <div>
+          <h1
+            className={item.completed ? "line-through" : ""}
+            onClick={() => handleStrike(item.id)}
+          >
+            {item.todo}
+          </h1>
+          <span>
+            <button onClick={() => handleDelete(item.id)}>-DELETE-</button>
           </span>
-          <button onClick={() => handleDelete(item.id)}>DELETE</button>
         </div>
       ))}
     </div>

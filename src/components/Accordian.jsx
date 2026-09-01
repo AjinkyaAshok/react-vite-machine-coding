@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 
 export default function Accordian() {
-  const [card, setCard] = useState(null);
+  const [active, setActive] = useState(null);
+
   let data = [
     {
       id: 1,
@@ -33,15 +34,20 @@ export default function Accordian() {
         "JSX is a syntax extension for JavaScript that allows you to write HTML-like code in your JavaScript files.",
     },
   ];
+
   const handleClick = (id) => {
-    setCard(card === id ? null: id);
+    setActive(active === id ? null : id);
   };
+
   return (
-    <div>
+    <div className="h-screen mx-auto justify-center items-center flex flex-col">
+      Accordian
       {data.map((item) => (
-        <div onClick={() => handleClick(item.id)}>
-          {item.title}
-          <span>{card === item.id && <p>{item.content}</p>}</span>
+        <div className="bg-amber-100 rounded-2xl m-2 p-2">
+          <h1 key={item.id} onClick={() => handleClick(item.id)}>
+            {item.title}
+          </h1>
+          {active === item.id && <h1>{item.content}</h1>}
         </div>
       ))}
     </div>

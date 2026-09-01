@@ -1,17 +1,25 @@
+
+
 import React, { useState } from "react";
 
 export default function Modal() {
   const [modal, setModal] = useState(false);
-
   return (
-    <div>
-      <button onClick={() => setModal(true)}>Open MOdal</button>
+    <div className="flex h-screen mx-auto justify-center items-center">
+      {modal && "MODAL =>"}
+      {!modal ? (
+        <button
+          className="bg-amber-100 p-2 rounded-2xl"
+          onClick={() => setModal(true)}
+        >
+          OPEN
+        </button>
+      ) : null}
+
       {modal && (
-        <div>
-          <p className="border-2 flex justify-center items-center mx-auto p-10 w-max">
-            "React is a JavaScript library for building user interfaces."
-          </p>
-          <button onClick={() => setModal(false)}>close Modal</button>
+        <div className="bg-amber-100 h-50 w-50 rounded-2xl text-center flex items-center p-2">
+          <h1>HI THIS IS REACT SPEAKING</h1>{" "}
+          <button onClick={() => setModal(false)}>X</button>
         </div>
       )}
     </div>
