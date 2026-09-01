@@ -1,11 +1,31 @@
-
-
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 export default function Modal() {
   const [modal, setModal] = useState(false);
+
+  useEffect(() => {
+    const handlekey = (e) => {
+      if (e.key === "Escape") {
+        setModal(false);
+      }
+    };
+    window.addEventListener("keydown", handlekey);
+    return () => {
+      window.removeEventListener("keydown", handlekey);
+    };
+  }, []);
+
+  const handleBackdrop = (e) => {
+    if (e.target === e.currentTarget) {
+      setModal(false);
+    }
+  };
+
   return (
-    <div className="flex h-screen mx-auto justify-center items-center">
+    <div
+      onClick={handleBackdrop}
+      className="flex h-screen mx-auto justify-center items-center"
+    >
       {modal && "MODAL =>"}
       {!modal ? (
         <button
