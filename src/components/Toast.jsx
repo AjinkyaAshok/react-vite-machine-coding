@@ -1,28 +1,39 @@
 import React, { useEffect, useState } from "react";
 
-export default function Toast({ message, type }) {
-  const [visible, setVisible] = useState(true);
+export default function Toast({ message, type, duration }) {
+  const [show, setShow] = useState(true);
 
   useEffect(() => {
-    const timeout = setTimeout(() => {
-      setVisible(false);
-    }, 3000);
-    return () => clearTimeout(timeout);
-  }, []);
+    const timer = setTimeout(() => {
+      setShow(false);
+    }, duration);
+    return () => clearTimeout(timer);
+  }, [type]);
+  const list = {
+    error: "bg-red-200",
+    success: "bg-green-200",
+    warning: "bg-yellow-200",
+    info: "bg-white",
+  };
 
-  const styles = {
-    success: "bg-green-500 text-white",
-    error: "bg-red-500 text-white",
-    info: "bg-blue-500 text-white",
+  const handleClick = (e) => {
+    if (e.target === e.currentTarget) {
+      setShow(false);
+    }
   };
   return (
-    <div>
-      {visible && (
-        <h1
-          className={`border-2 ${styles[type]} w-max  flex justify-center mx-auto mt-10 p-10`}
+    <div
+      onClick={(e) => handleClick(e)}
+      className="flex h-screen mx-auto justify-center items-center"
+    >
+      Toast
+      {show && (
+        <div
+          className={`${list[type]} justify-center flex items-center text-center  border-2 bg-red w-50 h-50`}
         >
-          {message} <button onClick={() => setVisible(false)}>X</button>
-        </h1>
+          <h1>{message}</h1>
+          <button onClick={() => setShow(!show)}>X</button>
+        </div>
       )}
     </div>
   );

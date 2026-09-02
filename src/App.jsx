@@ -22,9 +22,9 @@ export default function App() {
       {/* <Todo /> */}
       {/* <Tabs/> */}
       {/* <Accordian /> */}
-      <Modal />
+      {/* <Modal /> */}
       {/* <ProgressBar value={100}/> */}
-      {/* <Toast message={"hello"} type={"error"}  /> */}
+      <Toast message={"Hello React"} type={"success"} duration={5000} />
       {/* <Dropdown options={["React","Next","Angular"]} /> */}
       {/* <Autocomplete options={["React", "Vue", "Angular", "Svelte", "Next.js"]}/> */}
       {/* <Pagination /> */}
