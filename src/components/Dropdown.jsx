@@ -1,40 +1,35 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useState } from "react";
 
 export default function Dropdown({ options }) {
+  const [skill, setSkill] = useState("");
+  const [items, setItems] = useState(options);
   const [drop, setDrop] = useState(false);
-  const [selected, setSelected] = useState("SELECT FRAMWORK ");
-  const dropdownRef = useRef(null);
-
   const handleClick = (e) => {
-    if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
+    if (e.target === e.currentTarget) {
       setDrop(false);
     }
   };
 
-  useEffect(() => {
-    document.addEventListener("mousedown", handleClick);
-
-    return () => {
-      document.addEventListener("mousedown", handleClick);
-    };
-  });
-
+  const handleItem = (skill) => {
+    setItems((prev) => prev.filter((item) => item !== skill));
+    setSkill(skill);
+  };
   return (
-    <div ref={dropdownRef}>
-      <h1 onClick={() => setDrop(!drop)}>
-        {selected}
-        {drop ? "▲" : "▼"}
-      </h1>
+    <div
+      onClick={(e) => handleClick(e)}
+      className="h-screen flex-col mx-auto justify-center items-center flex"
+    >
+      Dropdown
+      <h1 onClick={() => setDrop(!drop)}>{skill ? skill : "Select Skills"}</h1>
       {drop &&
-        options.map((item) => (
-          <div
+        items.map((item) => (
+          <button
             onClick={() => {
-              setSelected(item);
-              setDrop(false);
+              (handleItem(item), setDrop(false));
             }}
           >
             {item}
-          </div>
+          </button>
         ))}
     </div>
   );

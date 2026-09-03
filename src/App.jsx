@@ -24,9 +24,9 @@ export default function App() {
       {/* <Accordian /> */}
       {/* <Modal /> */}
       {/* <ProgressBar value={100}/> */}
-      <Toast message={"Hello React"} type={"success"} duration={5000} />
+      {/* <Toast message={"Hello React"} type={"success"} duration={5000} /> */}
       {/* <Dropdown options={["React","Next","Angular"]} /> */}
-      {/* <Autocomplete options={["React", "Vue", "Angular", "Svelte", "Next.js"]}/> */}
+      <Autocomplete options={["React", "Vue", "Angular", "Svelte", "Next.js"]}/>
       {/* <Pagination /> */}
       {/* <Carousel /> */}
       {/* <OTP/> */}

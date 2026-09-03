@@ -1,21 +1,21 @@
 import React, { useEffect, useState } from "react";
 
-export default function Autocomplete() {
-  const [word, setWord] = useState("");
-  const [debounced, setDebounced] = useState("");
+export default function Autocomplete({ options }) {
+  const [text, setText] = useState("");
+  const [debounce, setDebounce] = useState("");
   const [results, setResults] = useState([]);
+  const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      setDebounced(word);
-    }, 1000);
+      setDebounce(text);
+    }, 3000);
     return () => clearTimeout(timer);
-  }, [word]);
+  }, [text]);
 
   useEffect(() => {
-    async function fetchResults() {
+    async function showList() {
       try {
         setLoading(true);
         setError(null);
@@ -28,37 +28,29 @@ export default function Autocomplete() {
         setLoading(false);
       }
     }
-    fetchResults();
-  }, [debounced]);
+    showList();
+  }, []);
 
-  const filteredOptions =
-    debounced.trim() === ""
+  const filterOption =
+    text.length === 0
       ? []
       : results.filter((item) =>
-          item.name.toLowerCase().includes(debounced.toLowerCase()),
+          item.username.toLowerCase().includes(debounce.toLowerCase()),
         );
 
   return (
-    <div className="flex mx-auto flex-col justify-center items-center h-screen">
-      <h1>Autocomplete</h1>
-
-      <input
-        onChange={(e) => setWord(e.target.value)}
-        type="text"
-        name=""
-        id=""
-        value={word}
-        className="bg-amber-200 rounded-2xl"
-      />
+    <div className="h-screen flex mx-auto justify-center items-center flex-col">
+      Autocomplete
       {loading && <h1>Loading...</h1>}
-      {error && <h1>Error</h1>}
-      {filteredOptions.map((item) => (
-        <div key={item.id} onClick={() => setWord(item.name)}>
-          {item.name}
-        </div>
+      <input
+        type="text"
+        value={text}
+        onChange={(e) => setText(e.target.value)}
+        className="bg-amber-100 rounded-2xl"
+      />
+      {filterOption.map((item) => (
+        <h1>{item.username}</h1>
       ))}
-      {word && filteredOptions.length === 0 && <div>No results found</div>}
     </div>
   );
 }
-
