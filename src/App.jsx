@@ -26,8 +26,8 @@ export default function App() {
       {/* <ProgressBar value={100}/> */}
       {/* <Toast message={"Hello React"} type={"success"} duration={5000} /> */}
       {/* <Dropdown options={["React","Next","Angular"]} /> */}
-      <Autocomplete options={["React", "Vue", "Angular", "Svelte", "Next.js"]}/>
-      {/* <Pagination /> */}
+      {/* <Autocomplete options={["React", "Vue", "Angular", "Svelte", "Next.js"]}/> */}
+      <Pagination />
       {/* <Carousel /> */}
       {/* <OTP/> */}
       {/* <MultiSelect /> */}
