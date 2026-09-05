@@ -11,8 +11,8 @@ import Dropdown from "./components/Dropdown";
 import Autocomplete from "./components/Autocomplete";
 import Pagination from "./components/Pagination";
 import Carousel from "./components/Carousel";
-import OTP from "./components/OTP";
 import MultiSelect from "./components/MultiSelect";
+import OTP from "./components/OTP";
 import FileUpload from "./components/FileUpload";
 
 export default function App() {
@@ -27,7 +27,7 @@ export default function App() {
       {/* <Toast message={"Hello React"} type={"success"} duration={5000} /> */}
       {/* <Dropdown options={["React","Next","Angular"]} /> */}
       {/* <Autocomplete options={["React", "Vue", "Angular", "Svelte", "Next.js"]}/> */}
-      <Pagination />
+      {/* <Pagination /> */}
       {/* <Carousel /> */}
       {/* <OTP/> */}
       {/* <MultiSelect /> */}

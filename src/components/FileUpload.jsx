@@ -24,3 +24,27 @@ export default function FileUpload() {
     </div>
   );
 }
+
+// import React, { useState } from "react";
+
+// export default function FileUpload() {
+//   const [file, setFile] = useState(null);
+//   return (
+//     <div className="flex-col flex h-screen mx-auto justify-center items-center">
+//       FileUpload
+//       <input
+//         type="file"
+//         className="w-min rounded-2xl bg-amber-100"
+//         onChange={(e) => setFile(e.target.files[0])}
+//       />
+//       {file ? (
+//         <div>
+//           <h1>{file.name}</h1>
+//           <h1>{(file.size) * 1024}KB</h1>
+//         </div>
+//       ) : (
+//         "no"
+//       )}
+//     </div>
+//   );
+// }
