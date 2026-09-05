@@ -14,6 +14,7 @@ import Carousel from "./components/Carousel";
 import MultiSelect from "./components/MultiSelect";
 import OTP from "./components/OTP";
 import FileUpload from "./components/FileUpload";
+import NestedComments from "./components/NestedComments";
 
 export default function App() {
   return (
@@ -32,6 +33,7 @@ export default function App() {
       {/* <OTP/> */}
       {/* <MultiSelect /> */}
       {/* <FileUpload/> */}
+      <NestedComments />
     </div>
   );
 }
