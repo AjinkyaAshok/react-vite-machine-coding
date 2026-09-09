@@ -1,4 +1,3 @@
-import React from "react";
 import "./index.css";
 import Todo from "./components/Todo";
 import Tabs from "./components/Tabs";
@@ -15,11 +14,17 @@ import MultiSelect from "./components/MultiSelect";
 import OTP from "./components/OTP";
 import FileUpload from "./components/FileUpload";
 import NestedComments from "./components/NestedComments";
-
+// import Home from "./optimization/context/Home";
+import UserProvider from "./optimization/context/UserProvider";
+import MemoComponent from "./optimization/memo/MemoComponent";
+import CallbackComponent from "./optimization/callback/CallbackComponent";
+import ParentMemo from "./optimization/reactmemo/ParentMemo";
+import RefComponent from "./optimization/useref/RefComponent";
+import Home from "./optimization/codeSplitting/Home";
 export default function App() {
   return (
     <div>
-      {/* <StarRating/> */}
+      {/* <StarRating /> */}
       {/* <Todo /> */}
       {/* <Tabs/> */}
       {/* <Accordian /> */}
@@ -33,7 +38,13 @@ export default function App() {
       {/* <OTP/> */}
       {/* <MultiSelect /> */}
       {/* <FileUpload/> */}
-      <NestedComments />
+      {/* <NestedComments /> */}
+      {/* <Home /> */}
+      {/* <MemoComponent/> */}
+      {/* <CallbackComponent /> */}
+      {/* <ParentMemo /> */}
+      {/* <RefComponent /> */}
+      <Home />
     </div>
   );
 }

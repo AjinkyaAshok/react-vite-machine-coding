@@ -49,49 +49,49 @@
 // //   );
 // // }
 
-import React, { useState } from "react";
+// import React, { useState } from "react";
 
-const options = ["React", "Vue", "Angular", "Svelte", "Next.js"];
+// const options = ["React", "Vue", "Angular", "Svelte", "Next.js"];
 
-export default function MultiSelect() {
-  const [isOpen, setIsOpen] = useState(false);
-  const [skills, setSkills] = useState([]);
+// export default function MultiSelect() {
+//   const [isOpen, setIsOpen] = useState(false);
+//   const [skills, setSkills] = useState([]);
 
-  const handleSkills = (index) => {
-    const skill = options[index];
-    if (skills.includes(skill)) {
-      setSkills(skills.filter((item) => item !== skill));
-    } else {
-      setSkills([...skills, skill]);
-    }
-  };
+//   const handleSkills = (index) => {
+//     const skill = options[index];
+//     if (skills.includes(skill)) {
+//       setSkills(skills.filter((item) => item !== skill));
+//     } else {
+//       setSkills([...skills, skill]);
+//     }
+//   };
 
-  return (
-    <div className="flex flex-col h-screen mx-auto items-center justify-center">
-      MultiSelect
-      <h1 onClick={() => setIsOpen(!isOpen)}>
-        SELECT SKILLS {isOpen ? "A" : "V"}
-        {skills && skills.map((item) => <h1>{item}</h1>)}
-      </h1>
-      {isOpen &&
-        options.map((item, index) => (
-          <h1 key={index}>
-            <span>
-              <input
-                onChange={() => handleSkills(index)}
-                type="checkbox"
-                name=""
-                id=""
-                key={index}
-                checked={skills.includes(item)}
-              />
-            </span>
-            {item}
-          </h1>
-        ))}
-    </div>
-  );
-}
+//   return (
+//     <div className="flex flex-col h-screen mx-auto items-center justify-center">
+//       MultiSelect
+//       <h1 onClick={() => setIsOpen(!isOpen)}>
+//         SELECT SKILLS {isOpen ? "A" : "V"}
+//         {skills && skills.map((item) => <h1>{item}</h1>)}
+//       </h1>
+//       {isOpen &&
+//         options.map((item, index) => (
+//           <h1 key={index}>
+//             <span>
+//               <input
+//                 onChange={() => handleSkills(index)}
+//                 type="checkbox"
+//                 name=""
+//                 id=""
+//                 key={index}
+//                 checked={skills.includes(item)}
+//               />
+//             </span>
+//             {item}
+//           </h1>
+//         ))}
+//     </div>
+//   );
+// }
 
 // import React, { useState } from "react";
 
@@ -127,3 +127,68 @@ export default function MultiSelect() {
 //     </div>
 //   );
 // }
+
+import React, { useState } from "react";
+
+export default function MultiSelect() {
+  const [selected, setSelected] = useState([]);
+
+  const options = ["React", "Vue", "Angular", "Svelte", "Next.js"];
+
+  const handleChange = (index) => {
+    const skill = options[index];
+
+    if (selected.includes(skill)) {
+      setSelected(selected.filter((item) => item !== skill));
+    } else {
+      setSelected([...selected, skill]);
+    }
+  };
+
+  return (
+    <div className="mx-auto flex flex-col items-center justify-center h-screen">
+      MultiSelect
+      <h1>{selected.join(", ")}</h1>
+      {options.map((item, index) => (
+        <h1>
+          <span>
+            <input
+              type="checkbox"
+              name=""
+              onChange={() => handleChange(index)}
+              id=""
+              checked={selected.length === options.length}
+            />
+          </span>
+          {item}
+        </h1>
+      ))}
+      <h1>
+        SELECT ALL{" "}
+        <span>
+          <input
+            type="checkbox"
+            name=""
+            onChange={() =>
+              setSelected(options.length === selected.length ? [] : [...options])
+            }
+            id=""
+          />
+        </span>
+      </h1>
+         <h1>
+       CLEAR ALL
+        <span>
+          <input
+            type="checkbox"
+            name=""
+            onChange={() =>
+              setSelected([])
+            }
+            id=""
+          />
+        </span>
+      </h1>
+    </div>
+  );
+}
