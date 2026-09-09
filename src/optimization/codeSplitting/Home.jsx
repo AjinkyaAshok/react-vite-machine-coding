@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <div>
       Home
-      <Suspense fallback={"loading..."}>
+      <Suspense fallback={<p>Loading...</p>}>
         <About />
       </Suspense>
     </div>

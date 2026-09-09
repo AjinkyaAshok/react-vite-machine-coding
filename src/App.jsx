@@ -21,6 +21,7 @@ import CallbackComponent from "./optimization/callback/CallbackComponent";
 import ParentMemo from "./optimization/reactmemo/ParentMemo";
 import RefComponent from "./optimization/useref/RefComponent";
 import Home from "./optimization/codeSplitting/Home";
+import ConsumeHook from "./optimization/customhook/ConsumeHook";
 export default function App() {
   return (
     <div>
@@ -44,7 +45,8 @@ export default function App() {
       {/* <CallbackComponent /> */}
       {/* <ParentMemo /> */}
       {/* <RefComponent /> */}
-      <Home />
+      {/* <Home /> */}
+      <ConsumeHook/>
     </div>
   );
 }
