@@ -20,8 +20,10 @@ import MemoComponent from "./optimization/memo/MemoComponent";
 import CallbackComponent from "./optimization/callback/CallbackComponent";
 import ParentMemo from "./optimization/reactmemo/ParentMemo";
 import RefComponent from "./optimization/useref/RefComponent";
-import Home from "./optimization/codeSplitting/Home";
+// import Home from "./optimization/codeSplitting/Home";
 import ConsumeHook from "./optimization/customhook/ConsumeHook";
+import Home from "./optimization/apiresponse/Home";
+import TransferList from "./components/TransferList";
 export default function App() {
   return (
     <div>
@@ -46,7 +48,9 @@ export default function App() {
       {/* <ParentMemo /> */}
       {/* <RefComponent /> */}
       {/* <Home /> */}
-      <ConsumeHook/>
+      {/* <ConsumeHook/> */}
+      {/* <Home /> */}
+      <TransferList />
     </div>
   );
 }
