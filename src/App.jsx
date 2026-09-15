@@ -25,6 +25,7 @@ import ConsumeHook from "./optimization/customhook/ConsumeHook";
 import Home from "./optimization/apiresponse/Home";
 import TransferList from "./components/TransferList";
 import DataTable from "./components/DataTable";
+import InfiniteScroll from "./components/InfiniteScroll";
 export default function App() {
   return (
     <div>
@@ -52,7 +53,8 @@ export default function App() {
       {/* <ConsumeHook/> */}
       {/* <Home /> */}
       {/* <TransferList /> */}
-      <DataTable/>
+      {/* <DataTable/> */}
+      <InfiniteScroll />
     </div>
   );
 }
