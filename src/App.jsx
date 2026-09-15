@@ -24,6 +24,7 @@ import RefComponent from "./optimization/useref/RefComponent";
 import ConsumeHook from "./optimization/customhook/ConsumeHook";
 import Home from "./optimization/apiresponse/Home";
 import TransferList from "./components/TransferList";
+import DataTable from "./components/DataTable";
 export default function App() {
   return (
     <div>
@@ -50,7 +51,8 @@ export default function App() {
       {/* <Home /> */}
       {/* <ConsumeHook/> */}
       {/* <Home /> */}
-      <TransferList />
+      {/* <TransferList /> */}
+      <DataTable/>
     </div>
   );
 }
