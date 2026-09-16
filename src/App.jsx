@@ -27,6 +27,7 @@ import TransferList from "./components/TransferList";
 import DataTable from "./components/DataTable";
 import InfiniteScroll from "./components/InfiniteScroll";
 import ShoppingCart from "./components/ShoppingCart";
+import DynamicForm from "./components/DynamicForm";
 export default function App() {
   return (
     <div>
@@ -56,7 +57,8 @@ export default function App() {
       {/* <TransferList /> */}
       {/* <DataTable/> */}
       {/* <InfiniteScroll /> */}
-      <ShoppingCart/>
+      {/* <ShoppingCart/> */}
+      <DynamicForm />
     </div>
   );
 }
