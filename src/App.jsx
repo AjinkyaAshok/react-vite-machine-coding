@@ -26,6 +26,7 @@ import Home from "./optimization/apiresponse/Home";
 import TransferList from "./components/TransferList";
 import DataTable from "./components/DataTable";
 import InfiniteScroll from "./components/InfiniteScroll";
+import ShoppingCart from "./components/ShoppingCart";
 export default function App() {
   return (
     <div>
@@ -54,7 +55,8 @@ export default function App() {
       {/* <Home /> */}
       {/* <TransferList /> */}
       {/* <DataTable/> */}
-      <InfiniteScroll />
+      {/* <InfiniteScroll /> */}
+      <ShoppingCart/>
     </div>
   );
 }
