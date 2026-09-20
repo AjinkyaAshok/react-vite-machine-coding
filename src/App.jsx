@@ -57,8 +57,8 @@ export default function App() {
       {/* <TransferList /> */}
       {/* <DataTable/> */}
       {/* <InfiniteScroll /> */}
-      {/* <ShoppingCart/> */}
-      <DynamicForm />
+      <ShoppingCart/>
+      {/* <DynamicForm /> */}
     </div>
   );
 }
