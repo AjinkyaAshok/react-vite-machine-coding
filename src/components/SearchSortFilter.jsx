@@ -3,6 +3,7 @@ import React, { useState } from "react";
 export default function SearchSortFilter() {
   const [name, setName] = useState("");
   const [category, setCategory] = useState("ALL");
+  const [sort, setSort] = useState("ASC");
 
   const products = [
     { id: 1, name: "iPhone 15", category: "Phone", price: 70000 },
@@ -17,7 +18,17 @@ export default function SearchSortFilter() {
     item.name.toLowerCase().includes(name.toLowerCase()),
   );
 
-  const categoryList = products.filter((item) => category === "ALL"|| item.category === category);
+  const categoryList = filterProducts.filter(
+    (item) => category === "ALL" || item.category === category,
+  );
+
+  const sortedData = categoryList.sort((a, b) => {
+    if (sort === "ASC") {
+      return a.price - b.price;
+    } else {
+      return b.price - a.price;
+    }
+  });
 
   return (
     <div className="">
@@ -28,16 +39,32 @@ export default function SearchSortFilter() {
         name=""
         id=""
       />
-      <button onClick={() => setCategory("ALL")} className="bg-amber-200 p-2 rounded-2xl">ALL</button>
+      <button
+        onClick={() => setCategory("ALL")}
+        className="bg-amber-200 p-2 rounded-2xl"
+      >
+        ALL
+      </button>
       <button
         onClick={() => setCategory("Phone")}
         className="bg-amber-200 p-2 rounded-2xl"
       >
         Phone
       </button>
-      <button onClick={() => setCategory("Laptop")} className="bg-amber-200 p-2 rounded-2xl">Laptop</button>
-      <button onClick={() => setCategory("Audio")} className="bg-amber-200 p-2 rounded-2xl">Audio</button>
-      {categoryList.map((item) => (
+      <button
+        onClick={() => setCategory("Laptop")}
+        className="bg-amber-200 p-2 rounded-2xl"
+      >
+        Laptop
+      </button>
+      <button
+        onClick={() => setCategory("Audio")}
+        className="bg-amber-200 p-2 rounded-2xl"
+      >
+        Audio
+      </button>
+      <button onClick={() => setSort(sort === "ASC" ? "DESC" : "ASC")}>{sort === "ASC"?"DESC":"ASC"}</button>
+      {sortedData.map((item) => (
         <div className="flex w-100 h-min justify-evenly items-center ">
           <h1>{item.name}</h1>
           <h1>{item.category}</h1>
