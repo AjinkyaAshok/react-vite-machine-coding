@@ -28,6 +28,8 @@ import DataTable from "./components/DataTable";
 import InfiniteScroll from "./components/InfiniteScroll";
 import ShoppingCart from "./components/ShoppingCart";
 import DynamicForm from "./components/DynamicForm";
+import FileExplorer from "./components/FileExplorer";
+import SearchSortFilter from "./components/SearchSortFilter";
 export default function App() {
   return (
     <div>
@@ -37,7 +39,7 @@ export default function App() {
       {/* <Accordian /> */}
       {/* <Modal /> */}
       {/* <ProgressBar value={100}/> */}
-      {/* <Toast message={"Hello React"} type={"success"} duration={5000} /> */}
+      {/* <Toast message={"Hello React"} type={"like"} duration={10000} /> */}
       {/* <Dropdown options={["React","Next","Angular"]} /> */}
       {/* <Autocomplete options={["React", "Vue", "Angular", "Svelte", "Next.js"]}/> */}
       {/* <Pagination /> */}
@@ -57,8 +59,10 @@ export default function App() {
       {/* <TransferList /> */}
       {/* <DataTable/> */}
       {/* <InfiniteScroll /> */}
-      <ShoppingCart/>
+      {/* <ShoppingCart/> */}
       {/* <DynamicForm /> */}
+      {/* <FileExplorer/> */}
+      <SearchSortFilter/>
     </div>
   );
 }
