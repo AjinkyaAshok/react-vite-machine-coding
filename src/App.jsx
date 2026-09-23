@@ -30,6 +30,7 @@ import ShoppingCart from "./components/ShoppingCart";
 import DynamicForm from "./components/DynamicForm";
 import FileExplorer from "./components/FileExplorer";
 import SearchSortFilter from "./components/SearchSortFilter";
+import KanbanBoard from "./components/KanbanBoard";
 export default function App() {
   return (
     <div>
@@ -62,7 +63,8 @@ export default function App() {
       {/* <ShoppingCart/> */}
       {/* <DynamicForm /> */}
       {/* <FileExplorer/> */}
-      <SearchSortFilter/>
+      {/* <SearchSortFilter/> */}
+      <KanbanBoard/>
     </div>
   );
 }
