@@ -31,6 +31,7 @@ import DynamicForm from "./components/DynamicForm";
 import FileExplorer from "./components/FileExplorer";
 import SearchSortFilter from "./components/SearchSortFilter";
 import KanbanBoard from "./components/KanbanBoard";
+import TimerStopwatch from "./components/TimerStopwatch";
 export default function App() {
   return (
     <div>
@@ -57,14 +58,15 @@ export default function App() {
       {/* <Home /> */}
       {/* <ConsumeHook/> */}
       {/* <Home /> */}
-      {/* <TransferList /> */}
+      <TransferList />
       {/* <DataTable/> */}
       {/* <InfiniteScroll /> */}
       {/* <ShoppingCart/> */}
       {/* <DynamicForm /> */}
       {/* <FileExplorer/> */}
       {/* <SearchSortFilter/> */}
-      <KanbanBoard/>
+      {/* <KanbanBoard/> */}
+      {/* <TimerStopwatch/> */}
     </div>
   );
 }
