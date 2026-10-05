@@ -58,14 +58,14 @@ export default function App() {
       {/* <Home /> */}
       {/* <ConsumeHook/> */}
       {/* <Home /> */}
-      <TransferList />
+      {/* <TransferList /> */}
       {/* <DataTable/> */}
       {/* <InfiniteScroll /> */}
       {/* <ShoppingCart/> */}
       {/* <DynamicForm /> */}
       {/* <FileExplorer/> */}
       {/* <SearchSortFilter/> */}
-      {/* <KanbanBoard/> */}
+      <KanbanBoard/>
       {/* <TimerStopwatch/> */}
     </div>
   );
